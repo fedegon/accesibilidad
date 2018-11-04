@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/bootstrap-accessibility.css">
 
+<link href="/css/docs.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/code.css">
+
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Sitio de pruebas WCAG 2.1</title>
+</head>
+
+<body>
+
+    <!-- Aquí empieza el encabezado principal que se mantendrá en todasa las páginas de nuestro sitio web -->
+
+    <header>
+      <h1>WCAG 2.1 - Actualizaciones:</h1>
+    </header>
+
+    <main>
+
+      <article>
+        <h2> 1.3.4 Orientation (AA): </h2>
+
+        <p>Asegura que el contenido se muestre en la orientacion (vertical u horizontal) preferida por el usuario.  </p>
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+            Ejemplo con menu
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+
+        <pre><code>
+<?php $str = <<<'EOD'
+<ul id="barraMenu">
+  <li>A</li>
+  <li>B</li>
+  <li>C</li>
+</ul>
+    
+<p> Este contenido debe poder verse bien tanto en vertical como horizontal </p>
+EOD;
+      $str = htmlspecialchars($str, ENT_HTML5, 'UTF-8');
+      $str = str_replace("&amp;hellip;", "&hellip;", $str);
+      echo($str);?>
+		</code></pre>
+
+<pre><code>
+<?php $str = <<<'EOD'
+/* Definimos estilos comunes */
+
+html, body {
+  width : 100%;
+  height: 100%;
+}
+
+body {
+  border: 1px solid black;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+p {
+  font   : 1em sans-serif;
+  margin : 0;
+  padding: .5em;
+}
+
+ul {
+  list-style: none;
+
+  font   : 1em monospace;
+  margin : 0;
+  padding: .5em;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  background: black;
+}
+
+li {
+  display: inline-block;
+  margin : 0;
+  padding: 0.5em;
+  background: white;
+}
+EOD;
+		  $str = htmlspecialchars($str, ENT_HTML5, 'UTF-8');
+		  $str = str_replace("&amp;hellip;", "&hellip;", $str);
+		  echo($str);?>
+</code></pre>
+
+<pre><code>
+<?php $str = <<<'EOD'
+/* Para vertical queremos el menu en la parte superior */
+
+@media screen and (orientation: portrait) {
+  #barraMenu {
+    width: 100%;
+  }
+}
+
+/* Para horizontal, queremos el menu a la izquierda */
+
+@media screen and (orientation: landscape) {
+  #barraMenu {
+    position: fixed;
+    width: 2.65em;
+    height: 100%;
+  }
+
+  p {
+    margin-left: 2em;
+  }
+
+  li + li {
+    margin-top: .5em;
+  }
+}
+EOD;
+		  $str = htmlspecialchars($str, ENT_HTML5, 'UTF-8');
+		  $str = str_replace("&amp;hellip;", "&hellip;", $str);
+		  echo($str);?>
+		</code></pre>
+
+<a href="/docs/wcag21-1-3-4.php"> Ver demo </a>
+   </div>
+    </div>
+  </div>
+</div>
+</article>
+
+    </main>
+
+    <footer>
+      <br>
+    </footer>
+
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/bootstrap-accessibility.min.js"></script>
+  </body>
+
+</html>
