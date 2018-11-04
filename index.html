@@ -45,23 +45,17 @@
     <div id="collapseOne" class="panel-collapse collapse in">
       <div class="panel-body">
 
-        <pre><code>
-<?php $str = <<<'EOD'
-<ul id="barraMenu">
-  <li>A</li>
-  <li>B</li>
-  <li>C</li>
-</ul>
+<pre><code>
+&lt;ul id=&quot;barraMenu&quot;&gt;
+  &lt;li&gt;A&lt;/li&gt;
+  &lt;li&gt;B&lt;/li&gt;
+  &lt;li&gt;C&lt;/li&gt;
+&lt;/ul&gt;
     
-<p> Este contenido debe poder verse bien tanto en vertical como horizontal </p>
-EOD;
-      $str = htmlspecialchars($str, ENT_HTML5, 'UTF-8');
-      $str = str_replace("&amp;hellip;", "&hellip;", $str);
-      echo($str);?>
-		</code></pre>
+&lt;p&gt; Este contenido debe poder verse bien tanto en vertical como horizontal &lt;/p&gt;
+</code></pre>
 
 <pre><code>
-<?php $str = <<<'EOD'
 /* Definimos estilos comunes */
 
 html, body {
@@ -101,14 +95,9 @@ li {
   padding: 0.5em;
   background: white;
 }
-EOD;
-		  $str = htmlspecialchars($str, ENT_HTML5, 'UTF-8');
-		  $str = str_replace("&amp;hellip;", "&hellip;", $str);
-		  echo($str);?>
 </code></pre>
 
 <pre><code>
-<?php $str = <<<'EOD'
 /* Para vertical queremos el menu en la parte superior */
 
 @media screen and (orientation: portrait) {
@@ -134,11 +123,7 @@ EOD;
     margin-top: .5em;
   }
 }
-EOD;
-		  $str = htmlspecialchars($str, ENT_HTML5, 'UTF-8');
-		  $str = str_replace("&amp;hellip;", "&hellip;", $str);
-		  echo($str);?>
-		</code></pre>
+</code></pre>
 
 <a href="/docs/wcag21-1-3-4.php"> Ver demo </a>
    </div>
