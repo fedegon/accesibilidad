@@ -24,20 +24,22 @@
 
 <main>
 
+<div class="panel-group" id="accordion">
 <article>
 <h2> 1.3.4 Orientation (AA): </h2>
-<p>Asegura que el contenido se muestre en la orientacion (vertical u horizontal) preferida por el usuario.  </p>
+<p>Orientaci&oacute;n: Permite que el contenido se muestre en la orientaci&oacute;n (vertical u horizontal) preferida por el usuario.
+  Los dispositivos moviles cuentan con un sensor para ajustar la orientaci&oacute;n de la pantalla seg&uacute;n la informaci&oacute;n sensorial.
+</p>
 
-<div class="panel-group" id="accordion">
-  <div class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse134">
             Ejemplo con menu
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapse134" class="panel-collapse collapse">
       <div class="panel-body">
 
 <pre><code>
@@ -128,26 +130,72 @@ li {
 </article>
 
 <article>
-  <h2> 1.3.4 Orientation (AA): </h2>
-  <p>Asegura que el contenido se muestre en la orientacion (vertical u horizontal) preferida por el usuario.  </p>
+  <h2>1.3.5 Identify Input Purpose (AA): </h2>
+  <p>Permite facilitar al usuario el ingreso de datos, mediante metadatos en formularios, permitiendo autocompletarlos. </p>
   
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
+  <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse134">
-            1.3.5 Identify Input Purpose (AA)
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse135">
+            Ejemplo 
           </a>
         </h4>
       </div>
-      <div id="collapse134" class="panel-collapse collapse in">
+      <div id="collapse135" class="panel-collapse collapse">
         <div class="panel-body">
+          <pre>
+            <code>
+                &lt;input type=&rdquo;text&rdquo; autocomplete=&rdquo;street-address&rdquo;&gt;&lt;br&gt;&lt;br&gt;
+            </code>
+          </pre>
         </div>
       </div>
-    </div>
   </div>
+  
   </article>
 
+  <article>
+      <h2> 1.3.6 Identify Purpose (AAA): </h2>
+      <p> Utilizar etiquetas ARIA como: banner, main, complementary y contentinfo para estructurar un sitio web. 
+        Esto facilita facilita la tarea de un lector de pantallas. </p>
+      
+      <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse136">
+                Im&aacute;gen y c&oacute;digo
+              </a>
+            </h4>
+          </div>
+          <div id="collapse136" class="panel-collapse collapse">
+            <div class="panel-body">
+              <img src="images/ex136_landmark.png" alt="regiones de una web">
+              <pre>
+                <code>
+                    &lt;nav tabindex=&quot;-1&quot; id=&quot;ui-skip-69&quot;&gt;
+                    &lt;ul class=&quot;nav nav-pills nav-stacked&quot;&gt;
+                      &lt;li class=&quot;active&quot; role=&quot;presentation&quot;&gt;&lt;a href=&quot;index.html&quot; aria-current=&quot;page&quot;&gt;Principles&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;HTML5.html&quot;&gt;HTML5&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;banner.html&quot;&gt;Banner&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;complementary.html&quot;&gt;Complementary&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;contentinfo.html&quot;&gt;Contentinfo&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;form.html&quot;&gt;Form&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;main.html&quot;&gt;Main&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;navigation.html&quot;&gt;Navigation&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;region.html&quot;&gt;Region&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;search.html&quot;&gt;Search&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;at.html&quot; aria-label=&quot;Assistive Technology&quot;&gt;Asst. Tech.&lt;/a&gt;&lt;/li&gt;
+                      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;resources.html&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;/nav&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+      </div>
+  </article>
+ 
+</div>
 </main>
 
 <footer>
