@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+  
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -25,123 +26,123 @@
 <main>
 
 <div class="panel-group" id="accordion">
+
 <article>
-<h2> 1.3.4 Orientation (AA): </h2>
+<h2> <a href="https://www.w3.org/WAI/WCAG21/Understanding/orientation.html"> 1.3.4 Orientation (AA):</a> </h2>
 <p>Orientaci&oacute;n: Permite que el contenido se muestre en la orientaci&oacute;n (vertical u horizontal) preferida por el usuario.
   Los dispositivos moviles cuentan con un sensor para ajustar la orientaci&oacute;n de la pantalla seg&uacute;n la informaci&oacute;n sensorial.
 </p>
-
 <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse134">
-          Ejemplo con c&oacute;digo
-        </a>
-      </h4>
-    </div>
-    <div id="collapse134" class="panel-collapse collapse">
-      <div class="panel-body">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse01">
+            Ejemplo con c&oacute;digo
+          </a>
+        </h4>
+      </div>
+      <div id="collapse01" class="panel-collapse collapse">
+        <div class="panel-body">
 
-<pre><code>
-&lt;ul id=&quot;barraMenu&quot;&gt;
-  &lt;li&gt;A&lt;/li&gt;
-  &lt;li&gt;B&lt;/li&gt;
-  &lt;li&gt;C&lt;/li&gt;
-&lt;/ul&gt;
-    
-&lt;p&gt; Este contenido debe poder verse bien tanto en vertical como horizontal &lt;/p&gt;
-</code></pre>
+  <pre><code>
+  &lt;ul id=&quot;barraMenu&quot;&gt;
+    &lt;li&gt;A&lt;/li&gt;
+    &lt;li&gt;B&lt;/li&gt;
+    &lt;li&gt;C&lt;/li&gt;
+  &lt;/ul&gt;
+      
+  &lt;p&gt; Este contenido debe poder verse bien tanto en vertical como horizontal &lt;/p&gt;
+  </code></pre>
 
-<pre><code>
-/* Definimos estilos comunes */
+  <pre><code>
+  /* Definimos estilos comunes */
 
-html, body {
-  width : 100%;
-  height: 100%;
-}
-
-body {
-  border: 1px solid black;
-
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-p {
-  font   : 1em sans-serif;
-  margin : 0;
-  padding: .5em;
-}
-
-ul {
-  list-style: none;
-
-  font   : 1em monospace;
-  margin : 0;
-  padding: .5em;
-
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
-  background: black;
-}
-
-li {
-  display: inline-block;
-  margin : 0;
-  padding: 0.5em;
-  background: white;
-}
-</code></pre>
-
-<pre><code>
-/* Para vertical queremos el menu en la parte superior */
-
-@media screen and (orientation: portrait) {
-  #barraMenu {
-    width: 100%;
-  }
-}
-
-/* Para horizontal, queremos el menu a la izquierda */
-
-@media screen and (orientation: landscape) {
-  #barraMenu {
-    position: fixed;
-    width: 2.65em;
+  html, body {
+    width : 100%;
     height: 100%;
   }
 
+  body {
+    border: 1px solid black;
+
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
   p {
-    margin-left: 2em;
+    font   : 1em sans-serif;
+    margin : 0;
+    padding: .5em;
   }
 
-  li + li {
-    margin-top: .5em;
-  }
-}
-</code></pre>
+  ul {
+    list-style: none;
 
-<a href="docs/wcag21-1-3-4.html"> Ver ejemplo 1.3.4 Orientation </a>
-   </div>
+    font   : 1em monospace;
+    margin : 0;
+    padding: .5em;
+
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    background: black;
+  }
+
+  li {
+    display: inline-block;
+    margin : 0;
+    padding: 0.5em;
+    background: white;
+  }
+  </code></pre>
+
+  <pre><code>
+  /* Para vertical queremos el menu en la parte superior */
+
+  @media screen and (orientation: portrait) {
+    #barraMenu {
+      width: 100%;
+    }
+  }
+
+  /* Para horizontal, queremos el menu a la izquierda */
+
+  @media screen and (orientation: landscape) {
+    #barraMenu {
+      position: fixed;
+      width: 2.65em;
+      height: 100%;
+    }
+
+    p {
+      margin-left: 2em;
+    }
+
+    li + li {
+      margin-top: .5em;
+    }
+  }
+  </code></pre>
+
+  <a href="docs/wcag21-1-3-4.html"> Ver ejemplo 1.3.4 Orientation </a>
     </div>
-  </div>
+      </div>
 </div>
+
 </article>
 
 <article>
-  <h2>1.3.5 Identify Input Purpose (AA): </h2>
+  <h2> <a href="https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html">1.3.5 Identify Input Purpose (AA):</a>  </h2>
   <p>Permite facilitar al usuario el ingreso de datos, mediante metadatos en formularios, permitiendo autocompletarlos. </p>
   
   <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse135">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse02">
             Ejemplo con c&oacute;digo 
           </a>
         </h4>
       </div>
-      <div id="collapse135" class="panel-collapse collapse">
+      <div id="collapse02" class="panel-collapse collapse">
 <!-- Inicio ejemplo formulario -->
 <br>
 <form id="contact-form" method="post" role="form" novalidate="true">
@@ -153,33 +154,33 @@ li {
         <div class="panel-body">
           <pre>
             <code>
-              &lt;form id=&quot;contact-form&quot; method=&quot;post&quot; role=&quot;form&quot; novalidate=&quot;true&quot;&gt;
-              Nombre: &lt;input type=&quot;text&quot; name=&quot;name&quot; autocomplete=&quot;name&quot; &gt;&lt;br&gt;
-              E-mail: &lt;input type=&quot;email&quot; name=&quot;email&quot; autocomplete=&quot;email&quot;&gt;&lt;br&gt;
-              &lt;input type=&quot;submit&quot;&gt;
-            &lt;/form&gt;
+&lt;form id=&quot;contact-form&quot; method=&quot;post&quot; role=&quot;form&quot; novalidate=&quot;true&quot;&gt;
+Nombre: &lt;input type=&quot;text&quot; name=&quot;name&quot; autocomplete=&quot;name&quot; &gt;&lt;br&gt;
+E-mail: &lt;input type=&quot;email&quot; name=&quot;email&quot; autocomplete=&quot;email&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
             </code>
           </pre>
         </div>
       </div>
   </div>
   
-  </article>
+</article>
 
-  <article>
-      <h2> 1.3.6 Identify Purpose (AAA): </h2>
+<article>
+      <h2> <a href="https://www.w3.org/WAI/WCAG21/Understanding/identify-purpose.html"> 1.3.6 Identify Purpose (AAA):</a> </h2>
       <p> Utilizar etiquetas ARIA como: banner, main, complementary y contentinfo para estructurar un sitio web. 
         Esto facilita facilita la tarea de un lector de pantallas. </p>
       
       <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse136">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse03">
                 Im&aacute;gen y c&oacute;digo
               </a>
             </h4>
           </div>
-          <div id="collapse136" class="panel-collapse collapse">
+          <div id="collapse03" class="panel-collapse collapse">
 <img src="images/ex136_landmark_low.png" alt="regiones de una web">
             <div class="panel-body">
                 <pre>
@@ -206,21 +207,21 @@ li {
             </div>
           </div>
       </div>
-  </article>
+</article>
  
 <article>
-    <h2> 1.4.10 Reflow (AA): </h2>
+    <h2> <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">1.4.10 Reflow (AA):</a>  </h2>
     <p> Cuando un usuario utiliza un zoom de 400%, el contenido deber&iacute;a verse automaticamente en una columna. </p>
     
     <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse141">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse04">
               Ejemplo con c&oacute;digo
             </a>
           </h4>
         </div>
-        <div id="collapse141" class="panel-collapse collapse">
+        <div id="collapse04" class="panel-collapse collapse">
           <div class="panel-body">
               <pre>
                   <code>
@@ -301,7 +302,34 @@ li {
     </div>
 </article>
 
+<article>
+<h2> <a href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html">1.4.11 Non-text Contrast (AA):</a>   </h2>
+<p> Apoya a los usuarios que no ven una gama completa de colores. La herramienta <a href="https://contrast-ratio.com/">Contrast Ratio</a> prueba si 
+  una combinaci&oacute;n de colores supera los est&aacute;ndares WCAG 2.0 con una proporci&oacute;n de al menos 3: 1 en comparaci&oacute;n con los 
+  colores adyacentes a los componentes de la interfaz, como enlaces, botones. 
+</p>
+<p>
+    Es para contenido no textual, para texto esta la norma <a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html">WCAG 1.4.3</a> 
+</p>
+  
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse05">
+            Im&aacute;gen 
+          </a>
+        </h4>
+      </div>
+      <div id="collapse05" class="panel-collapse collapse">
+        <div class="panel-body">
+<img src="images/wcag21-1-4-11.jpg" alt="Captura del sitio contrast-ratio"/>
+     </div>
+      </div>
+    </div>
+</article>
+
 </div>
+
 </main>
 
 <footer>
@@ -312,6 +340,7 @@ li {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="js/bootstrap-accessibility.min.js"></script>
+
 </body>
 
 </html>
