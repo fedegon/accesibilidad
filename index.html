@@ -35,7 +35,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse134">
-            Ejemplo con menu
+          Ejemplo con c&oacute;digo
         </a>
       </h4>
     </div>
@@ -137,23 +137,27 @@ li {
       <div class="panel-heading">
         <h4 class="panel-title">
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse135">
-            Ejemplo 
+            Ejemplo con c&oacute;digo 
           </a>
         </h4>
       </div>
       <div id="collapse135" class="panel-collapse collapse">
 <!-- Inicio ejemplo formulario -->
-
+<br>
 <form id="contact-form" method="post" role="form" novalidate="true">
-  Nombre: <input type="text" name="name" autocomplete="name" ><br>
-  E-mail: <input type="email" name="email" autocomplete="email"><br>
+  Nombre: <input type="text" name="name" autocomplete="name" ><br><br>
+  E-mail: <input type="email" name="email" autocomplete="email"><br><br>
   <input type="submit">
 </form>
 <!-- Fin ejemplo formulario -->
         <div class="panel-body">
           <pre>
             <code>
-&lt;input type=&rdquo;text&rdquo; autocomplete=&rdquo;street-address&rdquo;&gt;&lt;br&gt;&lt;br&gt;
+              &lt;form id=&quot;contact-form&quot; method=&quot;post&quot; role=&quot;form&quot; novalidate=&quot;true&quot;&gt;
+              Nombre: &lt;input type=&quot;text&quot; name=&quot;name&quot; autocomplete=&quot;name&quot; &gt;&lt;br&gt;
+              E-mail: &lt;input type=&quot;email&quot; name=&quot;email&quot; autocomplete=&quot;email&quot;&gt;&lt;br&gt;
+              &lt;input type=&quot;submit&quot;&gt;
+            &lt;/form&gt;
             </code>
           </pre>
         </div>
@@ -204,6 +208,99 @@ li {
       </div>
   </article>
  
+<article>
+    <h2> 1.4.10 Reflow (AA): </h2>
+    <p> Cuando un usuario utiliza un zoom de 400%, el contenido deber&iacute;a verse automaticamente en una columna. </p>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse141">
+              Ejemplo con c&oacute;digo
+            </a>
+          </h4>
+        </div>
+        <div id="collapse141" class="panel-collapse collapse">
+          <div class="panel-body">
+              <pre>
+                  <code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Using CSS Flexbox for Reflow&lt;/title&gt;
+&lt;style&gt;
+
+    /* Reflow Styling */
+
+    .row {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .row-nested {
+      width: calc(100% + 2em);
+      margin: 0 -1em 1em -1em;
+    }
+
+    .col {
+      padding: 1em;
+      flex: 0 1 100%;
+    }
+
+    @media all and (min-width: 576px) {
+      .col-panel {
+        flex: 0 1 50%;
+        padding-bottom: 0.25em;
+      }
+    }
+
+    @media all and (min-width: 992px) { 
+      main[role=&quot;main&quot;] {
+        flex: 0 1 66.333333%;
+      }
+      aside[role=&quot;complementary&quot;] {
+        flex: 0 1 33.333333%;
+        margin-top: 0;
+      }
+    }
+
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body class=&quot;row&quot;&gt;
+      &lt;header role=&quot;banner&quot; class=&quot;col&quot;&gt;
+        ...
+      &lt;/header&gt;
+      &lt;main role=&quot;main&quot; class=&quot;col&quot;&gt;
+        ...
+        ...     
+        &lt;div class=&quot;row row-nested&quot;&gt;
+          &lt;div class=&quot;col col-panel&quot;&gt;
+            ...
+          &lt;/div&gt;
+          &lt;div class=&quot;col col-panel&quot;&gt;
+            ...
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/main&gt;
+      &lt;aside role=&quot;complementary&quot; class=&quot;col&quot;&gt;
+        ...
+      &lt;/aside&gt;
+
+      &lt;footer role=&quot;contentinfo&quot; class=&quot;col&quot;&gt;
+        ...
+      &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+                  </code>
+                </pre>
+                <a href="docs/wcag21-1-4-10.html"> Ver ejemplo 1.4.10 Reflow </a>
+          </div>
+        </div>
+    </div>
+</article>
+
 </div>
 </main>
 
