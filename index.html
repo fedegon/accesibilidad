@@ -30,7 +30,7 @@
 <article>
 <h2> <a href="https://www.w3.org/WAI/WCAG21/Understanding/orientation.html"> 1.3.4 Orientation (AA):</a> </h2>
 <p>Orientaci&oacute;n: Permite que el contenido se muestre en la orientaci&oacute;n (vertical u horizontal) preferida por el usuario.
-  Los dispositivos moviles cuentan con un sensor para ajustar la orientaci&oacute;n de la pantalla seg&uacute;n la informaci&oacute;n sensorial.
+  Los dispositivos moviles permiten ajustar la orientaci&oacute;n de la pantalla seg&uacute;n la informaci&oacute;n sensorial.
 </p>
 <div class="panel panel-default">
       <div class="panel-heading">
@@ -326,6 +326,41 @@ E-mail: &lt;input type=&quot;email&quot; name=&quot;email&quot; autocomplete=&qu
      </div>
       </div>
     </div>
+</article>
+
+<article>
+<h2> <a href="https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html"> 1.4.12 Text Spacing (AA):</a> </h2>
+<p> Garantiza que los usuarios con baja visi&oacute;n puedan anular el espaciado del texto, para permitir una mayor 
+velocidad de lectura. Para configurar esto, use unidades relativas (por ej em o porcentaje) para especificar el espaciado 
+entre letras, el espaciado entre l&iacute;neas y el tama&ntilde;o de los contenedores de texto.
+</p>
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse06">
+              Ejemplo con c&oacute;digo
+          </a>
+        </h4>
+      </div>
+<div id="collapse06" class="panel-collapse collapse">
+<div class="panel-body">
+
+<pre><code>
+    * {
+     line-height: 1.5 !important;
+     letter-spacing: 0.12em !important;
+     word-spacing: 0.16em !important;
+    }
+    
+    p{
+     margin-bottom: 2em !important;
+    } 
+</code></pre>
+<a href="docs/wcag21-1-4-12.html"> Ver ejemplo 1.4.12 Text Spacing </a>
+</div>
+</div>
+</div>
+
 </article>
 
 </div>

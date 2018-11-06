@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>1.4.12 Text Spacing Example</title>
+</head>
+
+<body>
+
+<header>
+    <h1> 1.4.12 Text Spacing (AA) </h1>
+</header>
+
+<main>
+
+<h1>text spacing bookmarklet</h1>
+
+<p>Quick and dirty testing of <a href="https://www.w3.org/TR/WCAG21/#text-spacing">WCAG 2.1 Success Criterion 1.4.12 Text Spacing</a>.
+        
+<p>Experimental:<strong>use at own risk!</strong>
+<p>Bookmarklet: <a href="javascript:(function(){document.querySelector(%27body%27).classList.add(%27text-spacing%27);%20var%20style%20=%20document.createElement(%27style%27),%20styleContent%20=%20document.createTextNode(%27.text-spacing%20*%20{%20line-height:%201.5%20!important;%20letter-spacing:%200.12em%20!important;%20word-spacing:%200.16em%20!important;%20}%20.text-spacing%20p{%20margin-bottom:%202em%20!important;%20}%20%27);%20style.appendChild(styleContent%20);%20var%20caput%20=%20document.getElementsByTagName(%27head%27);%20caput[0].appendChild(style);%20})();">Text Spacing</a> 
+          
+</main>
+
+<footer>
+      <br>
+</footer>
+
+</body>
+
+</html>
