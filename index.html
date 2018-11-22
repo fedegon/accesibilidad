@@ -363,6 +363,120 @@ entre letras, el espaciado entre l&iacute;neas y el tama&ntilde;o de los contene
 
 </article>
 
+<article>
+  <h2> <a href="https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus.html"> 1.4.13 Content on Hover or Focus (AA):</a> </h2>
+  <p> El punto clave aqu&iacute; es que si el contenido aparece debido a una acci&oacute;n (clic), el usuario debe tener control sobre el 
+    contenido que se muestra u oculta. No puede desaparecer sin una acci&oacute;n del usuario.
+      
+      Por ejemplo, un tooltip podr&iacute;a descartar el contenido sin mover el cursor del mouse, por ejemplo presionando la tecla Esc.
+  </p>
+  <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse07">
+                Ejemplo con c&oacute;digo
+            </a>
+          </h4>
+        </div>
+  <div id="collapse07" class="panel-collapse collapse">
+  <div class="panel-body">
+  
+  <pre><code>
+
+      &lt;!-- HTML --&gt;
+
+      &lt;span class=&quot;help&quot; data-popover=&quot;#help&quot; tabindex=&quot;0&quot;&gt;?&lt;/span&gt;
+      &lt;div class=&quot;popover&quot; id=&quot;help&quot; tabindex=&quot;0&quot; title=&quot;Clic para cerrar&quot;&gt;
+        &lt;h3&gt;Titulo tooltip&lt;/h3&gt;
+        &lt;p&gt;Contenido tooltip&lt;/p&gt;
+      &lt;/div&gt;    
+
+      &lt;!-- JS --&gt;
+
+      &lt;script&gt;
+      function showPopover(help, popover, offset, clickToDismiss) {
+        popover.classList.remove('popover--hidden');
+        popover.style.top = (offset.height + offset.top + 10) + 'px';
+        popover.style.left = 0 + 'px';
+        help.innerHTML = '&amp;times;';
+        
+        if (clickToDismiss) {
+          help.classList.add('help--close');
+          popover.classList.add('popover--click');
+          popover.focus();
+        }
+      }
+      
+      function hidePopover(help, popover, clickToDismiss) {
+        if (popover.classList.contains('popover--click')) {
+          if (clickToDismiss) {
+            popover.classList.remove('popover--click');
+            popover.classList.add('popover--hidden');
+            help.classList.remove('help--close');
+            help.innerHTML = '?';
+          }
+        } else {
+          popover.classList.add('popover--hidden');
+          help.innerHTML = '?';
+        }
+      }
+      
+      
+      
+      [].forEach.call(document.querySelectorAll('.help'), function (help) {
+        var popover = document.querySelector(help.getAttribute('data-popover')),
+            offset = {
+              top: help.offsetTop,
+              left: help.offsetLeft,
+              height: help.offsetHeight,
+              width: help.offsetWidth
+            };
+        
+        popover.classList.add('popover--hidden');
+        
+        help.addEventListener('mouseover', function () {
+          showPopover(help, popover, offset);
+        }, false);
+        
+        help.addEventListener('click', function () {
+          if (popover.classList.contains('popover--click')) {
+            hidePopover(help, popover, true);
+          } else {
+            showPopover(help, popover, offset, true);
+          }
+        }, false);
+        
+        help.addEventListener('keydown', function (event) {
+          if (event.keyCode === 13) {
+            showPopover(help, popover, offset, true);
+          }
+        });
+        
+        help.addEventListener('mouseout', function () {
+          if (!popover.classList.contains('popover--hidden')) {
+            hidePopover(help, popover);
+          }
+        }, false);
+        
+        popover.addEventListener('click', function () {
+          hidePopover(help, popover, true);
+        }, false);
+        
+        popover.addEventListener('keydown', function (event) {
+          if (event.keyCode === 27) {
+            hidePopover(help, popover, true);
+          }
+        }, false);
+      });
+      &lt;/script&gt;
+  </code></pre>
+  <a href="docs/wcag21-1-4-13.html"> Ver ejemplo 1.4.13 Content on Hover or Focus </a>
+  </div>
+  </div>
+  </div>
+  
+  </article>
+
 </div>
 
 </main>
@@ -371,7 +485,7 @@ entre letras, el espaciado entre l&iacute;neas y el tama&ntilde;o de los contene
   <br>
 </footer>
 
- <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="js/bootstrap-accessibility.min.js"></script>

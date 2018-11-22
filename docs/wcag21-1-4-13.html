@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>1.4.13 Content on Hover or Focus</title>
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.help {
+  cursor: help;
+  font-weight: bold;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 20px;
+  color: #888;
+  
+  &:hover, &:focus {
+    color: #000;
+    outline: none;
+    border-color: #000;
+  }
+}
+
+.help--close {
+  background-color: #fce5ef;
+  border-color: #f9cade;
+  color: #000;
+  
+  &:hover, &:focus {
+    border-color: #f9cade;
+  }
+}
+
+.popover {
+  position: absolute;
+  padding: 16px;
+  background-color: #fce5ef;
+  border: 2px solid #f9cade;
+  color: #000;
+  width: 100%;
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+  
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.popover--hidden {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .popover {
+    width: 320px;
+    margin-left: 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1> 1.4.13 Content on Hover or Focus (AA) </h1>
+</header>
+
+<main>
+
+<h1>Ejemplo de un tooltip que se se puede cerrar con la tecla 'Escape':</h1>
+
+        <span class="help" data-popover="#help" tabindex="0">?</span>
+        <div class="popover" id="help" tabindex="0" title="Clic para cerrar">
+          <h3>Titulo tooltip</h3>
+          <p>Contenido tooltip</p>
+        </div>    
+</main>
+
+<footer>
+      <br>
+</footer>
+
+<script>
+function showPopover(help, popover, offset, clickToDismiss) {
+  popover.classList.remove('popover--hidden');
+  popover.style.top = (offset.height + offset.top + 10) + 'px';
+  popover.style.left = 0 + 'px';
+  help.innerHTML = '&times;';
+  
+  if (clickToDismiss) {
+    help.classList.add('help--close');
+    popover.classList.add('popover--click');
+    popover.focus();
+  }
+}
+
+function hidePopover(help, popover, clickToDismiss) {
+  if (popover.classList.contains('popover--click')) {
+    if (clickToDismiss) {
+      popover.classList.remove('popover--click');
+      popover.classList.add('popover--hidden');
+      help.classList.remove('help--close');
+      help.innerHTML = '?';
+    }
+  } else {
+    popover.classList.add('popover--hidden');
+    help.innerHTML = '?';
+  }
+}
+
+
+
+[].forEach.call(document.querySelectorAll('.help'), function (help) {
+  var popover = document.querySelector(help.getAttribute('data-popover')),
+      offset = {
+        top: help.offsetTop,
+        left: help.offsetLeft,
+        height: help.offsetHeight,
+        width: help.offsetWidth
+      };
+  
+  popover.classList.add('popover--hidden');
+  
+  help.addEventListener('mouseover', function () {
+    showPopover(help, popover, offset);
+  }, false);
+  
+  help.addEventListener('click', function () {
+    if (popover.classList.contains('popover--click')) {
+      hidePopover(help, popover, true);
+    } else {
+      showPopover(help, popover, offset, true);
+    }
+  }, false);
+  
+  help.addEventListener('keydown', function (event) {
+    if (event.keyCode === 13) {
+      showPopover(help, popover, offset, true);
+    }
+  });
+  
+  help.addEventListener('mouseout', function () {
+    if (!popover.classList.contains('popover--hidden')) {
+      hidePopover(help, popover);
+    }
+  }, false);
+  
+  popover.addEventListener('click', function () {
+    hidePopover(help, popover, true);
+  }, false);
+  
+  popover.addEventListener('keydown', function (event) {
+    if (event.keyCode === 27) {
+      hidePopover(help, popover, true);
+    }
+  }, false);
+});
+</script>
+
+
+</body>
+
+</html>
