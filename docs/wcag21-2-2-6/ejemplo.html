@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>2.2.6 Timeouts</title>
+    <meta name="author" content="SSA Accessible Solutions Branch" />
+    <meta name="copyright" content="Social Security Administration | Accessibility Resource Center | 2012" />
+    <meta name="description" content="Timeout Example" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link type="text/css" href="css/reset.css" rel="stylesheet" media="all" />
+    <link type="text/css" href="css/timeout.css" rel="stylesheet" media="all" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.idletimer.js" type="text/javascript"></script>
+    <script src="js/jquery.idletimeout.js" type="text/javascript"></script>
+    <script src="js/timeout.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <header>
+        <h1> 2.2.6 Timeouts (AAA): </h1>
+    </header>
+
+    <main>
+        <div id="example">
+            <div id="timeoutContainer">
+                <h4><a aria-atomic="true" aria-live="rude" href="#content">Select this link or your session will time
+                        out in 30 seconds due to inactivity: <span id="timeoutCounter"></span></a></h4>
+            </div><!-- end #timeoutContainer -->
+            <p><button id="toggleBtn">Start Timeout</button></p>
+            <h4 class="hide" id="timeoutWarning" role="alert">For the purpose of this demo, the application will remain
+                active for 15 seconds. Keep your mouse and keyboard still for that amount of time.</h4>
+        </div><!-- end #example -->
+    </main>
+
+    <footer>
+        <br>
+    </footer>
+
+
+</body>
+
+</html>

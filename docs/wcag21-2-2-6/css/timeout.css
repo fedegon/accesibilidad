@@ -1,0 +1,49 @@
+﻿/* 
+* Timeout CSS Document
+* created by: Eric Brown 
+* last modified: 8/20/10 
+*/
+
+/* Basic Tags */
+#example {
+    margin: 0;    
+    padding: 0;
+    background: #fff;
+    color: #000;
+    font-size: 100%;
+    font-family: Helvetica, Sans-Serif; 
+}
+
+#example h4 {
+    font-size:100%;       
+}
+
+#example p {
+    line-height:1.5em;
+    margin:1em;
+}   
+#example #timeoutWarning {
+    margin:1em;
+}
+/* Hyperlinks */
+a:link, a:visited { color: #009; text-decoration:none;}
+a:focus, a:hover, a:active{ text-decoration: underline;}        
+
+/* Timeout Container */
+#example #timeoutContainer { 
+    background:#CC5100;
+    border:3px solid #FF6500;     
+    color:#fff; 
+    display:none;
+    margin:0;
+    padding:5px;
+    text-align:center; 
+    font-weight:bold;
+    font-size:100%;
+ }
+#example #timeoutContainer h4 { font-size:100%; padding:0; margin:0; display:inline;}
+#example #timeoutContainer a:focus, #example #timeoutContainer a:hover, #example #timeoutContainer a:active { background:none; text-decoration:underline;}
+
+.hide{
+    display:none;
+}
